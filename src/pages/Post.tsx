@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { deletePostById, getPostById } from '../api';
-import { IAdvertisement, IPost } from '../api/types';
+import { IPost } from '../api/types';
 import NotFound from '../components/NotFound';
 import Tag from '../components/Tag';
 
@@ -66,6 +66,8 @@ const Post = () => {
   const [post, setPost] = useState<IPost | null>(null);
 
   const fetchPostById = async () => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     const { data } = await getPostById(postId);
     const { post } = data;
     setPost(post);
@@ -87,6 +89,8 @@ const Post = () => {
   };
 
   const requestDeletePostById = async () => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     await deletePostById(postId);
     navigate('/');
   };
