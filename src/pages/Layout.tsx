@@ -66,7 +66,7 @@ const Layout = () => {
         </div>
         <div>
           <Name>상진</Name>
-          <Description>충남대 학생</Description>
+          <Description>충남대 컴융학부</Description>
         </div>
       </Profile>
       <Nav>

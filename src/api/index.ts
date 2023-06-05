@@ -27,10 +27,17 @@ export const getPostById = (id: number) => {
   return instance.get(`/post/${id}`);
 };
 
-export const updatePostById = (id: number) => {
-  return instance.post(`/post/${id}`); //이건 내가 만듬
+export const updatePostById = (id: string, title: string, content: string, tag: TAG) => {
+  return (
+    instance.put(`posts/${id}`),
+    {
+      title,
+      content,
+      tag,
+    }
+  );
 };
 
-export const deletePostById = (id: number) => {
-  return instance.delete(`/post/${id}`); //이건 내가 만듬
+export const deletePostById = (id: string) => {
+  return instance.delete(`/posts/${id}`);
 };

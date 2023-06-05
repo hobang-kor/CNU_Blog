@@ -85,6 +85,7 @@ const SaveButton = styled.button`
 `;
 
 const Write = () => {
+  const navigate = useNavigate();
   const { state } = useLocation();
   const isEdit = state?.postId;
 
@@ -115,8 +116,6 @@ const Write = () => {
   const handleChangeTag = (event: ChangeEvent<HTMLSelectElement>) => {
     setTitle(event.target.value as TAG);
   };
-
-  const navigate = useNavigate();
 
   const requestCreatePost = async () => {
     await createPost(title, content, tag);
